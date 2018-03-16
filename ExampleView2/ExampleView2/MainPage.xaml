@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ExampleView2"
+             x:Class="ExampleView2.MainPage" BackgroundColor="DarkGray">
+    <StackLayout Orientation="Vertical" >
+
+        <StackLayout Orientation="Horizontal"    BackgroundColor="#443e42">
+            <StackLayout BackgroundColor="#dcb34a" WidthRequest="60" HeightRequest="60">
+                <!--<Image Source="SearchIcon.png" WidthRequest="30" HeightRequest="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"   ></Image>-->
+                <Button  Clicked="OnBack" WidthRequest="75" HeightRequest="65" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" BackgroundColor="#dcb34a" Image="SearchIcon.png"></Button>
+            </StackLayout>
+            <Label Text="Search"  TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                       FontSize="18"></Label>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical"   Margin="10,10,10,0"  BackgroundColor="White" HeightRequest="100">
+            <Label Text="Search"  TextColor="#44454a" FontSize="14"  Margin="10,10,10,0"></Label> 
+                      
+        <SearchBar x:Name="Search" TextColor="Black"  TextChanged="SearchBar_TextChanged" />
+                          
+    </StackLayout>
+
+    <StackLayout Orientation="Vertical"   Margin="10,10,10,0" VerticalOptions="Fill" >
+        <ListView x:Name="BagListView"  HasUnevenRows="True"   BackgroundColor="DarkGray" VerticalOptions="Fill" SeparatorColor="Gray" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="White">
+                            <Grid BackgroundColor="White">
+                                <Image Source="{Binding  ImageURL}" HeightRequest="100" WidthRequest="120"></Image>
+                              
+                            </Grid>
+
+                                <StackLayout Orientation="Vertical"   Margin="10,10,10,10" VerticalOptions="Fill" >
+                        <Label Text="{Binding BagName}" TextColor="Black" FontSize="15"></Label>
+                                <Label Text="{Binding ShortDescription}" TextColor="Gray" FontSize="Small" ></Label>
+                                <Label Text="{Binding Price}" TextColor="Black" FontSize="15"></Label>
+                        </StackLayout>
+                        </StackLayout>
+                  </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
+
+                  
+                    
+                
